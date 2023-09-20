@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0540DB292AB8E2E700B61BC9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0540DB272AB8E2E700B61BC9 /* README.md */; };
+		0540DB2A2AB8E2E700B61BC9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0540DB282AB8E2E700B61BC9 /* LICENSE */; };
+		0540DB2C2AB8F70100B61BC9 /* AttributionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB2B2AB8F70100B61BC9 /* AttributionTableViewCell.swift */; };
+		0540DB2E2AB9363000B61BC9 /* SettingsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB2D2AB9363000B61BC9 /* SettingsSwiftUIView.swift */; };
+		0540DB302ABB48E800B61BC9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB2F2ABB48E700B61BC9 /* Settings.swift */; };
+		05C02DB82AA7D4DE008852EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DB72AA7D4DE008852EA /* AppDelegate.swift */; };
+		05C02DBA2AA7D4DE008852EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DB92AA7D4DE008852EA /* SceneDelegate.swift */; };
+		05C02DBC2AA7D4DE008852EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DBB2AA7D4DE008852EA /* ViewController.swift */; };
+		05C02DBF2AA7D4DE008852EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C02DBD2AA7D4DE008852EA /* Main.storyboard */; };
+		05C02DC12AA7D4E0008852EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C02DC02AA7D4E0008852EA /* Assets.xcassets */; };
+		05C02DC42AA7D4E0008852EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C02DC22AA7D4E0008852EA /* LaunchScreen.storyboard */; };
+		05C02DCF2AA7D4E1008852EA /* PrusaLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DCE2AA7D4E1008852EA /* PrusaLinkTests.swift */; };
+		05C02DD92AA7D4E1008852EA /* PrusaLinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DD82AA7D4E1008852EA /* PrusaLinkUITests.swift */; };
+		05C02DDB2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DDA2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift */; };
+		05C02DEE2AA90F49008852EA /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DED2AA90F49008852EA /* KeychainSwiftDistrib.swift */; };
+		05C02DF02AA9143D008852EA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DEF2AA9143D008852EA /* SettingsTableViewController.swift */; };
+		05C02DF22AA91B03008852EA /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DF12AA91B03008852EA /* InputTableViewCell.swift */; };
+		05C02DF42AAFAC3C008852EA /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = 05C02DF32AAFAC3C008852EA /* main.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05C02DCB2AA7D4E1008852EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05C02DAC2AA7D4DE008852EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05C02DB32AA7D4DE008852EA;
+			remoteInfo = PrusaMk4;
+		};
+		05C02DD52AA7D4E1008852EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05C02DAC2AA7D4DE008852EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05C02DB32AA7D4DE008852EA;
+			remoteInfo = PrusaMk4;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0540DB272AB8E2E700B61BC9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		0540DB282AB8E2E700B61BC9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		0540DB2B2AB8F70100B61BC9 /* AttributionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributionTableViewCell.swift; sourceTree = "<group>"; };
+		0540DB2D2AB9363000B61BC9 /* SettingsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwiftUIView.swift; sourceTree = "<group>"; };
+		0540DB2F2ABB48E700B61BC9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		05C02DB42AA7D4DE008852EA /* PrusaLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrusaLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C02DB72AA7D4DE008852EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		05C02DB92AA7D4DE008852EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		05C02DBB2AA7D4DE008852EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05C02DBE2AA7D4DE008852EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		05C02DC02AA7D4E0008852EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05C02DC32AA7D4E0008852EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		05C02DC52AA7D4E0008852EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05C02DCA2AA7D4E1008852EA /* PrusaLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrusaLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C02DCE2AA7D4E1008852EA /* PrusaLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrusaLinkTests.swift; sourceTree = "<group>"; };
+		05C02DD42AA7D4E1008852EA /* PrusaLinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrusaLinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C02DD82AA7D4E1008852EA /* PrusaLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrusaLinkUITests.swift; sourceTree = "<group>"; };
+		05C02DDA2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrusaLinkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		05C02DED2AA90F49008852EA /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
+		05C02DEF2AA9143D008852EA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		05C02DF12AA91B03008852EA /* InputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
+		05C02DF32AAFAC3C008852EA /* main.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = main.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05C02DB12AA7D4DE008852EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C02DC72AA7D4E1008852EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C02DD12AA7D4E1008852EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05C02DAB2AA7D4DE008852EA = {
+			isa = PBXGroup;
+			children = (
+				0540DB282AB8E2E700B61BC9 /* LICENSE */,
+				0540DB272AB8E2E700B61BC9 /* README.md */,
+				05C02DB62AA7D4DE008852EA /* PrusaLink */,
+				05C02DCD2AA7D4E1008852EA /* PrusaLinkTests */,
+				05C02DD72AA7D4E1008852EA /* PrusaLinkUITests */,
+				05C02DB52AA7D4DE008852EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05C02DB52AA7D4DE008852EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05C02DB42AA7D4DE008852EA /* PrusaLink.app */,
+				05C02DCA2AA7D4E1008852EA /* PrusaLinkTests.xctest */,
+				05C02DD42AA7D4E1008852EA /* PrusaLinkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05C02DB62AA7D4DE008852EA /* PrusaLink */ = {
+			isa = PBXGroup;
+			children = (
+				05C02DB72AA7D4DE008852EA /* AppDelegate.swift */,
+				05C02DB92AA7D4DE008852EA /* SceneDelegate.swift */,
+				05C02DBB2AA7D4DE008852EA /* ViewController.swift */,
+				05C02DEF2AA9143D008852EA /* SettingsTableViewController.swift */,
+				0540DB2D2AB9363000B61BC9 /* SettingsSwiftUIView.swift */,
+				0540DB2F2ABB48E700B61BC9 /* Settings.swift */,
+				05C02DF12AA91B03008852EA /* InputTableViewCell.swift */,
+				0540DB2B2AB8F70100B61BC9 /* AttributionTableViewCell.swift */,
+				05C02DED2AA90F49008852EA /* KeychainSwiftDistrib.swift */,
+				05C02DBD2AA7D4DE008852EA /* Main.storyboard */,
+				05C02DC02AA7D4E0008852EA /* Assets.xcassets */,
+				05C02DC22AA7D4E0008852EA /* LaunchScreen.storyboard */,
+				05C02DF32AAFAC3C008852EA /* main.html */,
+				05C02DC52AA7D4E0008852EA /* Info.plist */,
+			);
+			path = PrusaLink;
+			sourceTree = "<group>";
+		};
+		05C02DCD2AA7D4E1008852EA /* PrusaLinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				05C02DCE2AA7D4E1008852EA /* PrusaLinkTests.swift */,
+			);
+			path = PrusaLinkTests;
+			sourceTree = "<group>";
+		};
+		05C02DD72AA7D4E1008852EA /* PrusaLinkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				05C02DD82AA7D4E1008852EA /* PrusaLinkUITests.swift */,
+				05C02DDA2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift */,
+			);
+			path = PrusaLinkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05C02DB32AA7D4DE008852EA /* PrusaLink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05C02DDE2AA7D4E1008852EA /* Build configuration list for PBXNativeTarget "PrusaLink" */;
+			buildPhases = (
+				05C02DB02AA7D4DE008852EA /* Sources */,
+				05C02DB12AA7D4DE008852EA /* Frameworks */,
+				05C02DB22AA7D4DE008852EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrusaLink;
+			productName = PrusaMk4;
+			productReference = 05C02DB42AA7D4DE008852EA /* PrusaLink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		05C02DC92AA7D4E1008852EA /* PrusaLinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05C02DE12AA7D4E1008852EA /* Build configuration list for PBXNativeTarget "PrusaLinkTests" */;
+			buildPhases = (
+				05C02DC62AA7D4E1008852EA /* Sources */,
+				05C02DC72AA7D4E1008852EA /* Frameworks */,
+				05C02DC82AA7D4E1008852EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05C02DCC2AA7D4E1008852EA /* PBXTargetDependency */,
+			);
+			name = PrusaLinkTests;
+			productName = PrusaMk4Tests;
+			productReference = 05C02DCA2AA7D4E1008852EA /* PrusaLinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		05C02DD32AA7D4E1008852EA /* PrusaLinkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05C02DE42AA7D4E1008852EA /* Build configuration list for PBXNativeTarget "PrusaLinkUITests" */;
+			buildPhases = (
+				05C02DD02AA7D4E1008852EA /* Sources */,
+				05C02DD12AA7D4E1008852EA /* Frameworks */,
+				05C02DD22AA7D4E1008852EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05C02DD62AA7D4E1008852EA /* PBXTargetDependency */,
+			);
+			name = PrusaLinkUITests;
+			productName = PrusaMk4UITests;
+			productReference = 05C02DD42AA7D4E1008852EA /* PrusaLinkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05C02DAC2AA7D4DE008852EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					05C02DB32AA7D4DE008852EA = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					05C02DC92AA7D4E1008852EA = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 05C02DB32AA7D4DE008852EA;
+					};
+					05C02DD32AA7D4E1008852EA = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 05C02DB32AA7D4DE008852EA;
+					};
+				};
+			};
+			buildConfigurationList = 05C02DAF2AA7D4DE008852EA /* Build configuration list for PBXProject "PrusaLink" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05C02DAB2AA7D4DE008852EA;
+			productRefGroup = 05C02DB52AA7D4DE008852EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05C02DB32AA7D4DE008852EA /* PrusaLink */,
+				05C02DC92AA7D4E1008852EA /* PrusaLinkTests */,
+				05C02DD32AA7D4E1008852EA /* PrusaLinkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05C02DB22AA7D4DE008852EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0540DB2A2AB8E2E700B61BC9 /* LICENSE in Resources */,
+				05C02DF42AAFAC3C008852EA /* main.html in Resources */,
+				05C02DC42AA7D4E0008852EA /* LaunchScreen.storyboard in Resources */,
+				0540DB292AB8E2E700B61BC9 /* README.md in Resources */,
+				05C02DC12AA7D4E0008852EA /* Assets.xcassets in Resources */,
+				05C02DBF2AA7D4DE008852EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C02DC82AA7D4E1008852EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C02DD22AA7D4E1008852EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05C02DB02AA7D4DE008852EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C02DEE2AA90F49008852EA /* KeychainSwiftDistrib.swift in Sources */,
+				05C02DF22AA91B03008852EA /* InputTableViewCell.swift in Sources */,
+				05C02DBC2AA7D4DE008852EA /* ViewController.swift in Sources */,
+				0540DB2E2AB9363000B61BC9 /* SettingsSwiftUIView.swift in Sources */,
+				0540DB2C2AB8F70100B61BC9 /* AttributionTableViewCell.swift in Sources */,
+				05C02DF02AA9143D008852EA /* SettingsTableViewController.swift in Sources */,
+				0540DB302ABB48E800B61BC9 /* Settings.swift in Sources */,
+				05C02DB82AA7D4DE008852EA /* AppDelegate.swift in Sources */,
+				05C02DBA2AA7D4DE008852EA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C02DC62AA7D4E1008852EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C02DCF2AA7D4E1008852EA /* PrusaLinkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C02DD02AA7D4E1008852EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C02DDB2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift in Sources */,
+				05C02DD92AA7D4E1008852EA /* PrusaLinkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05C02DCC2AA7D4E1008852EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05C02DB32AA7D4DE008852EA /* PrusaLink */;
+			targetProxy = 05C02DCB2AA7D4E1008852EA /* PBXContainerItemProxy */;
+		};
+		05C02DD62AA7D4E1008852EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05C02DB32AA7D4DE008852EA /* PrusaLink */;
+			targetProxy = 05C02DD52AA7D4E1008852EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		05C02DBD2AA7D4DE008852EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05C02DBE2AA7D4DE008852EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		05C02DC22AA7D4E0008852EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05C02DC32AA7D4E0008852EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05C02DDC2AA7D4E1008852EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		05C02DDD2AA7D4E1008852EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		05C02DDF2AA7D4E1008852EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HWDVZ7FBT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PrusaLink/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geoh2os8295.PrusaLink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		05C02DE02AA7D4E1008852EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HWDVZ7FBT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PrusaLink/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geoh2os8295.PrusaLink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		05C02DE22AA7D4E1008852EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HWDVZ7FBT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geoh2os8295.PrusaLinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrusaLink.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PrusaLink";
+			};
+			name = Debug;
+		};
+		05C02DE32AA7D4E1008852EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HWDVZ7FBT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geoh2os8295.PrusaLinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrusaLink.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PrusaLink";
+			};
+			name = Release;
+		};
+		05C02DE52AA7D4E1008852EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HWDVZ7FBT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geoh2os8295.PrusaLinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PrusaLink;
+			};
+			name = Debug;
+		};
+		05C02DE62AA7D4E1008852EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HWDVZ7FBT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geoh2os8295.PrusaLinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PrusaLink;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05C02DAF2AA7D4DE008852EA /* Build configuration list for PBXProject "PrusaLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05C02DDC2AA7D4E1008852EA /* Debug */,
+				05C02DDD2AA7D4E1008852EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05C02DDE2AA7D4E1008852EA /* Build configuration list for PBXNativeTarget "PrusaLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05C02DDF2AA7D4E1008852EA /* Debug */,
+				05C02DE02AA7D4E1008852EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05C02DE12AA7D4E1008852EA /* Build configuration list for PBXNativeTarget "PrusaLinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05C02DE22AA7D4E1008852EA /* Debug */,
+				05C02DE32AA7D4E1008852EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05C02DE42AA7D4E1008852EA /* Build configuration list for PBXNativeTarget "PrusaLinkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05C02DE52AA7D4E1008852EA /* Debug */,
+				05C02DE62AA7D4E1008852EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05C02DAC2AA7D4DE008852EA /* Project object */;
+}

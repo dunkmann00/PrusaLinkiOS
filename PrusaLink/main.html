@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prusalink</title>
+    <style>
+        body {
+            color: #fefefe;
+            background-color: #0a0a0a;
+            font-family: Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        
+        .loading-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin: 0 0px;
+            background-color: #fefefe;
+          
+            border-radius: 50%;
+          
+            opacity: 1;
+                            
+            animation: loadingColor 1.5s infinite;
+        }
+
+        .loading-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .loading-dot:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .loading-dot:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-dot:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes loadingColor {
+            33% { background-color: #fa6831 }
+            66% { background-color: #fa6831 }
+            100% { background-color: #fefefe } 
+        }
+    </style>
+  </head>
+  <body>
+    {{ body }}
+  </body>
+</html>
