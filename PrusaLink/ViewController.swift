@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import SwiftUI
+import Combine
 import WebKit
 
 class ViewController: UIViewController {
     
     let REQUEST_TIMEOUT: TimeInterval = 30
     
-    var ipAddress: String?
     var ipAddressChanged = false
         
     weak var logoView: UIView!
@@ -23,12 +24,10 @@ class ViewController: UIViewController {
     
     weak var loadingWebView: WKWebView?
     
-    lazy var bundledHTML: String = {
-        let bundledHTMLURL = Bundle.main.url(forResource: "main", withExtension: "html")!
-        let bundledHTMLData = try! Data(contentsOf: bundledHTMLURL)
-        return String(data: bundledHTMLData, encoding: .utf8)!
-    }()
-        
+    lazy var bundledHTML: String = Bundle.main.loadResource("main", withExension: ".html")!
+    
+    var cancellables: Set<AnyCancellable> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -44,17 +43,26 @@ class ViewController: UIViewController {
         addLoadingWebView()
         
         loadPrinterWebsite()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        ipAddressChanged = Settings.global.ipAddress != ipAddress
+        
+        Settings.global.$ipAddress
+            .receive(on: DispatchQueue.global(qos: .default))
+            .debounce(for: .seconds(1), scheduler: RunLoop.current)
+            .removeDuplicates()
+            .sink { [weak self] _ in
+                self?.ipAddressChanged = true
+            }.store(in: &cancellables)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateLogoConstraint()
         self.logoView.isHidden = false
+    }
+    
+    @IBAction func settingsBarButtonItemPressed(_ sender: UIBarButtonItem) {
+        let settingsHostingController = UIHostingController(rootView: SettingsSwiftUIView())
+        navigationController?.pushViewController(settingsHostingController, animated: true)
     }
     
     func loadPrinterWebsite() {

@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		0540DB292AB8E2E700B61BC9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0540DB272AB8E2E700B61BC9 /* README.md */; };
 		0540DB2A2AB8E2E700B61BC9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0540DB282AB8E2E700B61BC9 /* LICENSE */; };
-		0540DB2C2AB8F70100B61BC9 /* AttributionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB2B2AB8F70100B61BC9 /* AttributionTableViewCell.swift */; };
 		0540DB2E2AB9363000B61BC9 /* SettingsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB2D2AB9363000B61BC9 /* SettingsSwiftUIView.swift */; };
 		0540DB302ABB48E800B61BC9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB2F2ABB48E700B61BC9 /* Settings.swift */; };
+		0540DB322ABBF58E00B61BC9 /* Extenions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB312ABBF58E00B61BC9 /* Extenions.swift */; };
 		05C02DB82AA7D4DE008852EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DB72AA7D4DE008852EA /* AppDelegate.swift */; };
 		05C02DBA2AA7D4DE008852EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DB92AA7D4DE008852EA /* SceneDelegate.swift */; };
 		05C02DBC2AA7D4DE008852EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DBB2AA7D4DE008852EA /* ViewController.swift */; };
@@ -22,8 +22,6 @@
 		05C02DD92AA7D4E1008852EA /* PrusaLinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DD82AA7D4E1008852EA /* PrusaLinkUITests.swift */; };
 		05C02DDB2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DDA2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift */; };
 		05C02DEE2AA90F49008852EA /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DED2AA90F49008852EA /* KeychainSwiftDistrib.swift */; };
-		05C02DF02AA9143D008852EA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DEF2AA9143D008852EA /* SettingsTableViewController.swift */; };
-		05C02DF22AA91B03008852EA /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DF12AA91B03008852EA /* InputTableViewCell.swift */; };
 		05C02DF42AAFAC3C008852EA /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = 05C02DF32AAFAC3C008852EA /* main.html */; };
 /* End PBXBuildFile section */
 
@@ -47,9 +45,9 @@
 /* Begin PBXFileReference section */
 		0540DB272AB8E2E700B61BC9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		0540DB282AB8E2E700B61BC9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
-		0540DB2B2AB8F70100B61BC9 /* AttributionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributionTableViewCell.swift; sourceTree = "<group>"; };
 		0540DB2D2AB9363000B61BC9 /* SettingsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwiftUIView.swift; sourceTree = "<group>"; };
 		0540DB2F2ABB48E700B61BC9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		0540DB312ABBF58E00B61BC9 /* Extenions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenions.swift; sourceTree = "<group>"; };
 		05C02DB42AA7D4DE008852EA /* PrusaLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrusaLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C02DB72AA7D4DE008852EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05C02DB92AA7D4DE008852EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +62,6 @@
 		05C02DD82AA7D4E1008852EA /* PrusaLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrusaLinkUITests.swift; sourceTree = "<group>"; };
 		05C02DDA2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrusaLinkUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		05C02DED2AA90F49008852EA /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
-		05C02DEF2AA9143D008852EA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		05C02DF12AA91B03008852EA /* InputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
 		05C02DF32AAFAC3C008852EA /* main.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = main.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,11 +118,9 @@
 				05C02DB72AA7D4DE008852EA /* AppDelegate.swift */,
 				05C02DB92AA7D4DE008852EA /* SceneDelegate.swift */,
 				05C02DBB2AA7D4DE008852EA /* ViewController.swift */,
-				05C02DEF2AA9143D008852EA /* SettingsTableViewController.swift */,
 				0540DB2D2AB9363000B61BC9 /* SettingsSwiftUIView.swift */,
 				0540DB2F2ABB48E700B61BC9 /* Settings.swift */,
-				05C02DF12AA91B03008852EA /* InputTableViewCell.swift */,
-				0540DB2B2AB8F70100B61BC9 /* AttributionTableViewCell.swift */,
+				0540DB312ABBF58E00B61BC9 /* Extenions.swift */,
 				05C02DED2AA90F49008852EA /* KeychainSwiftDistrib.swift */,
 				05C02DBD2AA7D4DE008852EA /* Main.storyboard */,
 				05C02DC02AA7D4E0008852EA /* Assets.xcassets */,
@@ -289,12 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				05C02DEE2AA90F49008852EA /* KeychainSwiftDistrib.swift in Sources */,
-				05C02DF22AA91B03008852EA /* InputTableViewCell.swift in Sources */,
 				05C02DBC2AA7D4DE008852EA /* ViewController.swift in Sources */,
 				0540DB2E2AB9363000B61BC9 /* SettingsSwiftUIView.swift in Sources */,
-				0540DB2C2AB8F70100B61BC9 /* AttributionTableViewCell.swift in Sources */,
-				05C02DF02AA9143D008852EA /* SettingsTableViewController.swift in Sources */,
 				0540DB302ABB48E800B61BC9 /* Settings.swift in Sources */,
+				0540DB322ABBF58E00B61BC9 /* Extenions.swift in Sources */,
 				05C02DB82AA7D4DE008852EA /* AppDelegate.swift in Sources */,
 				05C02DBA2AA7D4DE008852EA /* SceneDelegate.swift in Sources */,
 			);
