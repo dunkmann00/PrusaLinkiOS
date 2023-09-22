@@ -74,10 +74,11 @@ class ViewController: UIViewController {
             return
         }
         
-        guard let prusalinkURL = URL(string: "http://\(ipAddress)/") else {
+        guard validateIPAddress(ipToValidate: ipAddress),
+              let prusalinkURL = URL(string: "http://\(ipAddress)/") else {
             webView.loadHTMLString(getHTMLFor(
                 header: "IP Address Invalid",
-                body: ["Click the gear icon to enter a valid IP Address for the printer."]
+                body: ["Click the gear icon to enter a valid local IP Address for the printer."]
             ), baseURL: nil)
             return
         }
@@ -168,6 +169,16 @@ class ViewController: UIViewController {
             }
         }
         return bundledHTML.replacingOccurrences(of: "{{ body }}", with: htmlString)
+    }
+    
+    func validateIPAddress(ipToValidate: String) -> Bool {
+        var sin = sockaddr_in()
+        if ipToValidate.withCString({ cstring in inet_pton(AF_INET, cstring, &sin.sin_addr) }) != 1 {
+            // IPv4 peer.
+            return false
+        }
+        
+        return ipToValidate.contains(/(^127\.)|(^10\.)|(^172\.1[6-9]\.)|(^172\.2[0-9]\.)|(^172\.3[0-1]\.)|(^192\.168\.)/)
     }
 }
 
