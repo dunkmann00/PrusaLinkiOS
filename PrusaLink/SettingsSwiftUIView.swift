@@ -79,6 +79,8 @@ struct SettingsSwiftUIView: View {
     
     @StateObject var settings: Settings = Settings.global
     
+    @FocusState var ipAddressIsFocused: Bool
+    
     var body: some View {
         Form {
             Section("IP Address") {
@@ -86,6 +88,20 @@ struct SettingsSwiftUIView: View {
                     Text("IP Address")
                 }
                 .settingsTextField(Binding($settings.ipAddress, replacingNilWith: ""))
+                .focused($ipAddressIsFocused)
+                .keyboardType(.decimalPad)
+                .toolbar {
+                    if ipAddressIsFocused {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Spacer()
+                            Button("done") {
+                                ipAddressIsFocused = false
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(.blue)
+                        }
+                    }
+                }
             }
             Section("Credentials") {
                 TextField(text: Binding($settings.username, replacingNilWith: "")) {
