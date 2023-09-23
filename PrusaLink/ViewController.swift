@@ -31,7 +31,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        addPullToRefresh()
+        webView.scrollView.refreshControl = refreshWithHandler { [weak self] _ in
+            self?.refreshPrinterWebsite()
+        }
         webView.navigationDelegate = self
         webView.scrollView.delegate = self
         
@@ -99,14 +101,10 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func pullToRefresh(sender: UIRefreshControl) {
-       refreshPrinterWebsite()
-    }
-    
-    func addPullToRefresh() {
+    func refreshWithHandler(_ handler: @escaping UIActionHandler) -> UIRefreshControl {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(pullToRefresh(sender:)), for: .valueChanged)
-        webView.scrollView.refreshControl = refreshControl
+        refreshControl.addAction(UIAction(handler: handler), for: .valueChanged)
+        return refreshControl
     }
     
     func getLogoView() -> UIView {
@@ -148,6 +146,11 @@ class ViewController: UIViewController {
         loadingWebView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         loadingWebView.loadHTMLString(getHTMLFor(header: "Loading PrusaLink", body: nil, activityIndicator: true), baseURL: nil)
+        
+        loadingWebView.scrollView.refreshControl = refreshWithHandler { [weak self] _ in
+            loadingWebView.scrollView.refreshControl?.endRefreshing()
+            self?.refreshPrinterWebsite()
+        }
         
         self.loadingWebView = loadingWebView
     }
@@ -236,10 +239,7 @@ extension ViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("Finished Loading")
-        if let refreshControl = webView.scrollView.refreshControl,
-           refreshControl.isRefreshing {
-            refreshControl.endRefreshing()
-        }
+        webView.scrollView.refreshControl?.endRefreshing()
         
         if let loadingWebView = loadingWebView {
             loadingWebView.removeFromSuperview()
@@ -249,6 +249,10 @@ extension ViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print("Webview Failed")
         print(error)
+        if webView.isLoading { // We are still loading so we must be trying again, don't cancel by displaying error
+            print("Ignoring Error")
+            return
+        }
         let error = error as NSError
         webView.loadHTMLString(getHTMLFor(
             header: "Loading PrusaLink Failed",
@@ -263,6 +267,10 @@ extension ViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print("Webview Failed")
         print(error)
+        if webView.isLoading { // We are still loading so we must be trying again, don't cancel by displaying error
+            print("Ignoring Error")
+            return
+        }
         let error = error as NSError
         webView.loadHTMLString(getHTMLFor(
             header: "Loading PrusaLink Failed",
