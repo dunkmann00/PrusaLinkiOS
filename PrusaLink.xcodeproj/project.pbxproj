@@ -48,6 +48,7 @@
 		0540DB2D2AB9363000B61BC9 /* SettingsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwiftUIView.swift; sourceTree = "<group>"; };
 		0540DB2F2ABB48E700B61BC9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0540DB312ABBF58E00B61BC9 /* Extenions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenions.swift; sourceTree = "<group>"; };
+		0540DB332ABE994700B61BC9 /* PRIVACY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY.md; sourceTree = "<group>"; };
 		05C02DB42AA7D4DE008852EA /* PrusaLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrusaLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C02DB72AA7D4DE008852EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05C02DB92AA7D4DE008852EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 			children = (
 				0540DB282AB8E2E700B61BC9 /* LICENSE */,
 				0540DB272AB8E2E700B61BC9 /* README.md */,
+				0540DB332ABE994700B61BC9 /* PRIVACY.md */,
 				05C02DB62AA7D4DE008852EA /* PrusaLink */,
 				05C02DCD2AA7D4E1008852EA /* PrusaLinkTests */,
 				05C02DD72AA7D4E1008852EA /* PrusaLinkUITests */,
