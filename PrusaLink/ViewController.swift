@@ -37,10 +37,7 @@ class ViewController: UIViewController {
         webView.navigationDelegate = self
         webView.scrollView.delegate = self
         
-        let logoView = getLogoView()
-        navigationItem.titleView = logoView
-        logoView.isHidden = true
-        self.logoView = logoView
+        addLogoView()
         
         addLoadingWebView()
         
@@ -107,13 +104,13 @@ class ViewController: UIViewController {
         return refreshControl
     }
     
-    func getLogoView() -> UIView {
+    func addLogoView() {
         let logo = UIImage(named: "Logo")
         let logoView = UIImageView(image: logo)
         logoView.clipsToBounds = false
         logoView.contentMode = .scaleAspectFill
         logoView.translatesAutoresizingMaskIntoConstraints = false
-        logoView.widthAnchor.constraint(equalTo: logoView.heightAnchor, multiplier: 4.153).isActive = true
+        logoView.widthAnchor.constraint(equalTo: logoView.heightAnchor, multiplier: 5.833).isActive = true
         
         let containerView = UIView(frame: .zero)
         containerView.clipsToBounds = true
@@ -125,12 +122,14 @@ class ViewController: UIViewController {
         
         containerView.leadingAnchor.constraint(equalTo: logoView.leadingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: logoView.trailingAnchor).isActive = true
-        containerView.heightAnchor.constraint(equalTo: logoView.heightAnchor, constant: 4).isActive = true
+        containerView.heightAnchor.constraint(equalTo: logoView.heightAnchor, constant: 10).isActive = true
         
         logoConstraint = containerView.centerYAnchor.constraint(equalTo: logoView.centerYAnchor, constant: 8)
         logoConstraint.isActive = true
                 
-        return containerView
+        navigationItem.titleView = containerView
+        logoView.isHidden = true
+        self.logoView = logoView
     }
     
     func addLoadingWebView() {
@@ -297,7 +296,7 @@ extension ViewController: WKNavigationDelegate {
 
 extension ViewController: UIScrollViewDelegate {
     func updateLogoConstraint() {
-        let logoViewOffset = view.safeAreaInsets.top - logoView.frame.height - 20
+        let logoViewOffset = view.safeAreaInsets.top - logoView.frame.height - 32
         logoConstraint.constant =  min(0, logoViewOffset + webView.scrollView.contentOffset.y)
     }
     
