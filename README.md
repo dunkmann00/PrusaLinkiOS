@@ -2,6 +2,8 @@
 
 iOS app to access PrusaLink from your Prusa printer on your local network.
 
+Check it out on the [App Store](https://apps.apple.com/us/app/prusalinkios/id6467438508).
+
 What this app does is pretty self explanatory...access PrusaLink. You can enter
 the IP address of your printer, along with your username and password, and the
 app will authenticate with the printer and load the web UI.
