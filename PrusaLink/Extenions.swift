@@ -5,7 +5,7 @@
 //  Created by George Waters on 9/20/23.
 //
 
-import Foundation
+import UIKit
 
 extension Bundle {
     func loadResource(_ name: String?, withExension ext: String?) -> String? {
@@ -33,5 +33,16 @@ extension Bundle {
     
     func getCompileYear() -> String {
         String(Calendar(identifier: .gregorian).dateComponents([.year], from: getCompileDate()).year!)
+    }
+}
+
+extension UIEdgeInsets {
+    static func + (lhs: UIEdgeInsets, rhs: UIEdgeInsets) -> UIEdgeInsets {
+        return UIEdgeInsets(
+            top: lhs.top + rhs.top,
+            left: lhs.left + rhs.left,
+            bottom: lhs.bottom + rhs.bottom,
+            right: lhs.right + rhs.right
+        )
     }
 }

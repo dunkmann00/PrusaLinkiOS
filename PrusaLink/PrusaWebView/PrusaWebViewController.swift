@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PrusaWebViewController.swift
 //  PrusaLink
 //
 //  Created by George Waters on 9/5/23.
@@ -10,17 +10,13 @@ import SwiftUI
 import Combine
 import WebKit
 
-class ViewController: UIViewController {
+class PrusaWebViewController: UIViewController {
+    
+    static let storyboardID = "prusaWebVC"
     
     let REQUEST_TIMEOUT: TimeInterval = 30
     
-    var ipAddressChanged = false
-        
-    weak var logoView: UIView!
-    var logoConstraint: NSLayoutConstraint!
-
     @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var settingsBarButtonItem: UIBarButtonItem!
     
     weak var loadingWebView: WKWebView?
     
@@ -28,44 +24,47 @@ class ViewController: UIViewController {
     
     var cancellables: Set<AnyCancellable> = []
     
+    var printer: Printer {
+        didSet {
+            if oldValue.ipAddress != printer.ipAddress ||
+               oldValue.username  != printer.username  ||
+               oldValue.password  != printer.password {
+                loadPrinterWebsite()
+            }
+        }
+    }
+    
+    @Binding var logoViewOffset: CGFloat
+    
+    init?(coder: NSCoder, printer: Printer, logoViewOffset: Binding<CGFloat>) {
+        self.printer = printer
+        self._logoViewOffset = logoViewOffset
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) is not implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         webView.scrollView.refreshControl = refreshWithHandler { [weak self] _ in
             self?.refreshPrinterWebsite()
         }
         webView.navigationDelegate = self
         webView.scrollView.delegate = self
         
-        addLogoView()
-        
         addLoadingWebView()
         
         loadPrinterWebsite()
-        
-        Settings.global.$ipAddress
-            .receive(on: DispatchQueue.global(qos: .default))
-            .debounce(for: .seconds(1), scheduler: RunLoop.current)
-            .removeDuplicates()
-            .sink { [weak self] _ in
-                self?.ipAddressChanged = true
-            }.store(in: &cancellables)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        updateLogoConstraint()
-        self.logoView.isHidden = false
-    }
-    
-    @IBAction func settingsBarButtonItemPressed(_ sender: UIBarButtonItem) {
-        let settingsHostingController = UIHostingController(rootView: SettingsSwiftUIView())
-        navigationController?.pushViewController(settingsHostingController, animated: true)
     }
     
     func loadPrinterWebsite() {
-        guard let ipAddress = Settings.global.ipAddress else {
+        guard let ipAddress = printer.ipAddress else {
             webView.loadHTMLString(getHTMLFor(
                 header: "No IP Address Set",
                 body: ["Click the gear icon to set the IP Address of the printer."]
@@ -82,12 +81,11 @@ class ViewController: UIViewController {
             return
         }
         
-        ipAddressChanged = false
         webView.load(URLRequest(url: prusalinkURL, timeoutInterval: REQUEST_TIMEOUT))
     }
     
     func refreshPrinterWebsite() {
-        if webView.url == nil || webView.url?.absoluteString == "about:blank" || ipAddressChanged {
+        if webView.url == nil || webView.url?.absoluteString == "about:blank" {
             loadPrinterWebsite()
         } else {
             guard let url = webView.url else {
@@ -102,34 +100,6 @@ class ViewController: UIViewController {
         let refreshControl = UIRefreshControl()
         refreshControl.addAction(UIAction(handler: handler), for: .valueChanged)
         return refreshControl
-    }
-    
-    func addLogoView() {
-        let logo = UIImage(named: "Logo")
-        let logoView = UIImageView(image: logo)
-        logoView.clipsToBounds = false
-        logoView.contentMode = .scaleAspectFill
-        logoView.translatesAutoresizingMaskIntoConstraints = false
-        logoView.widthAnchor.constraint(equalTo: logoView.heightAnchor, multiplier: 5.833).isActive = true
-        
-        let containerView = UIView(frame: .zero)
-        containerView.clipsToBounds = true
-        containerView.isOpaque = false
-        containerView.backgroundColor = .clear
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        containerView.addSubview(logoView)
-        
-        containerView.leadingAnchor.constraint(equalTo: logoView.leadingAnchor).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: logoView.trailingAnchor).isActive = true
-        containerView.heightAnchor.constraint(equalTo: logoView.heightAnchor, constant: 10).isActive = true
-        
-        logoConstraint = containerView.centerYAnchor.constraint(equalTo: logoView.centerYAnchor, constant: 8)
-        logoConstraint.isActive = true
-                
-        navigationItem.titleView = containerView
-        logoView.isHidden = true
-        self.logoView = logoView
     }
     
     func addLoadingWebView() {
@@ -184,20 +154,9 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: WKNavigationDelegate {
-    func removeAllCredentials() {
-        let allCredentials = URLCredentialStorage.shared.allCredentials
-        allCredentials.forEach { (protectionSpace: URLProtectionSpace, credentialDict: [String : URLCredential]) in
-            credentialDict.forEach { (credentialKey: String, credential: URLCredential) in
-                URLCredentialStorage.shared.remove(credential, for: protectionSpace)
-            }
-        }
-    }
-    
+extension PrusaWebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-//        removeAllCredentials() // Not needed anymore because we only store the credential for the session
-        
-        guard let username = Settings.global.username else {
+        guard let username = printer.username else {
             completionHandler(.performDefaultHandling, nil)
             webView.loadHTMLString(getHTMLFor(
                 header: "No Username Set",
@@ -210,7 +169,7 @@ extension ViewController: WKNavigationDelegate {
             return
         }
         
-        guard let password = Settings.global.password else {
+        guard let password = printer.password else {
             completionHandler(.cancelAuthenticationChallenge, nil)
             webView.loadHTMLString(getHTMLFor(
                 header: "No Password Set",
@@ -223,7 +182,7 @@ extension ViewController: WKNavigationDelegate {
             return
         }
         
-        let mk4Credentials = URLCredential(user: username, password: password, persistence: .forSession)
+        let mk4Credentials = URLCredential(user: username, password: password, persistence: .none)
         
         if challenge.previousFailureCount < 3 {
             completionHandler(.useCredential, mk4Credentials)
@@ -294,14 +253,10 @@ extension ViewController: WKNavigationDelegate {
     }
 }
 
-extension ViewController: UIScrollViewDelegate {
-    func updateLogoConstraint() {
-        let logoViewOffset = view.safeAreaInsets.top - logoView.frame.height - 32
-        logoConstraint.constant =  min(0, logoViewOffset + webView.scrollView.contentOffset.y)
-    }
-    
+extension PrusaWebViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updateLogoConstraint()
+        let scrollOffset = -view.safeAreaInsets.top - webView.scrollView.contentOffset.y + 60
+        logoViewOffset = min(max(-44, scrollOffset), 0)
     }
 }
 
