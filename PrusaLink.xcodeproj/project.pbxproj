@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		0540DB292AB8E2E700B61BC9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0540DB272AB8E2E700B61BC9 /* README.md */; };
 		0540DB2A2AB8E2E700B61BC9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0540DB282AB8E2E700B61BC9 /* LICENSE */; };
-		0540DB2E2AB9363000B61BC9 /* SettingsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB2D2AB9363000B61BC9 /* SettingsSwiftUIView.swift */; };
+		0540DB2E2AB9363000B61BC9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB2D2AB9363000B61BC9 /* SettingsView.swift */; };
 		0540DB302ABB48E800B61BC9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB2F2ABB48E700B61BC9 /* Settings.swift */; };
 		0540DB322ABBF58E00B61BC9 /* Extenions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540DB312ABBF58E00B61BC9 /* Extenions.swift */; };
-		054E96A32ADDD9C500F8987C /* PrintersSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E96A22ADDD9C500F8987C /* PrintersSwiftUIView.swift */; };
+		054E96A32ADDD9C500F8987C /* PrintersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E96A22ADDD9C500F8987C /* PrintersView.swift */; };
 		054E96A52AE0BF2100F8987C /* PrusaLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E96A42AE0BF2100F8987C /* PrusaLinkApp.swift */; };
-		054E96A72AE0D52000F8987C /* PrusaWebSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E96A62AE0D52000F8987C /* PrusaWebSwiftUIView.swift */; };
+		054E96A72AE0D52000F8987C /* PrusaWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E96A62AE0D52000F8987C /* PrusaWebView.swift */; };
 		05C02DB82AA7D4DE008852EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DB72AA7D4DE008852EA /* AppDelegate.swift */; };
 		05C02DBA2AA7D4DE008852EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DB92AA7D4DE008852EA /* SceneDelegate.swift */; };
 		05C02DBC2AA7D4DE008852EA /* PrusaWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DBB2AA7D4DE008852EA /* PrusaWebViewController.swift */; };
@@ -26,8 +26,24 @@
 		05C02DDB2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DDA2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift */; };
 		05C02DEE2AA90F49008852EA /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C02DED2AA90F49008852EA /* KeychainSwiftDistrib.swift */; };
 		05C02DF42AAFAC3C008852EA /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = 05C02DF32AAFAC3C008852EA /* main.html */; };
-		05C394862AF45B6C00156E9F /* PrinterImageViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394852AF45B6C00156E9F /* PrinterImageViews.swift */; };
+		05C394862AF45B6C00156E9F /* GenericPrinterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394852AF45B6C00156E9F /* GenericPrinterView.swift */; };
 		05C3948A2AF6B45B00156E9F /* PrintersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394892AF6B45B00156E9F /* PrintersCollectionView.swift */; };
+		05C3948D2B0C05EA00156E9F /* PrintersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3948C2B0C05EA00156E9F /* PrintersCollectionViewController.swift */; };
+		05C3948F2B0C08BE00156E9F /* PrinterBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3948E2B0C08BE00156E9F /* PrinterBox.swift */; };
+		05C394912B0C0B5800156E9F /* PrintersCVProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394902B0C0B5800156E9F /* PrintersCVProxy.swift */; };
+		05C394932B0C0EA500156E9F /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394922B0C0EA500156E9F /* SwiftUIExtensions.swift */; };
+		05C394962B0C0F8000156E9F /* CustomPrinterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394952B0C0F8000156E9F /* CustomPrinterView.swift */; };
+		05C394982B0C0FD300156E9F /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394972B0C0FD300156E9F /* InfoView.swift */; };
+		05C3949B2B0C116A00156E9F /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3949A2B0C116A00156E9F /* Printer.swift */; };
+		05C3949D2B0C11C200156E9F /* SettingsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3949C2B0C11C200156E9F /* SettingsDataStore.swift */; };
+		05C394A02B0C120B00156E9F /* DiskIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3949F2B0C120B00156E9F /* DiskIO.swift */; };
+		05C394A32B0C129400156E9F /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394A22B0C129400156E9F /* SecureTextField.swift */; };
+		05C394A52B0C12C600156E9F /* SettingsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394A42B0C12C600156E9F /* SettingsTextField.swift */; };
+		05C394A72B0C12F700156E9F /* ColorDataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394A62B0C12F700156E9F /* ColorDataPicker.swift */; };
+		05C394A92B0C135200156E9F /* RemovePrinterAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394A82B0C135200156E9F /* RemovePrinterAlertModifier.swift */; };
+		05C394AD2B0C147900156E9F /* PrinterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394AC2B0C147900156E9F /* PrinterItem.swift */; };
+		05C394AF2B0C14C500156E9F /* NavLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394AE2B0C14C500156E9F /* NavLogoView.swift */; };
+		05C394B12B0C15F100156E9F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394B02B0C15F100156E9F /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,13 +66,13 @@
 /* Begin PBXFileReference section */
 		0540DB272AB8E2E700B61BC9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		0540DB282AB8E2E700B61BC9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
-		0540DB2D2AB9363000B61BC9 /* SettingsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwiftUIView.swift; sourceTree = "<group>"; };
+		0540DB2D2AB9363000B61BC9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0540DB2F2ABB48E700B61BC9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0540DB312ABBF58E00B61BC9 /* Extenions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenions.swift; sourceTree = "<group>"; };
 		0540DB332ABE994700B61BC9 /* PRIVACY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY.md; sourceTree = "<group>"; };
-		054E96A22ADDD9C500F8987C /* PrintersSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintersSwiftUIView.swift; sourceTree = "<group>"; };
+		054E96A22ADDD9C500F8987C /* PrintersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintersView.swift; sourceTree = "<group>"; };
 		054E96A42AE0BF2100F8987C /* PrusaLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrusaLinkApp.swift; sourceTree = "<group>"; };
-		054E96A62AE0D52000F8987C /* PrusaWebSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrusaWebSwiftUIView.swift; sourceTree = "<group>"; };
+		054E96A62AE0D52000F8987C /* PrusaWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrusaWebView.swift; sourceTree = "<group>"; };
 		05C02DB42AA7D4DE008852EA /* PrusaLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrusaLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C02DB72AA7D4DE008852EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05C02DB92AA7D4DE008852EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,8 +88,24 @@
 		05C02DDA2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrusaLinkUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		05C02DED2AA90F49008852EA /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
 		05C02DF32AAFAC3C008852EA /* main.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = main.html; sourceTree = "<group>"; };
-		05C394852AF45B6C00156E9F /* PrinterImageViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterImageViews.swift; sourceTree = "<group>"; };
+		05C394852AF45B6C00156E9F /* GenericPrinterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPrinterView.swift; sourceTree = "<group>"; };
 		05C394892AF6B45B00156E9F /* PrintersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintersCollectionView.swift; sourceTree = "<group>"; };
+		05C3948C2B0C05EA00156E9F /* PrintersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintersCollectionViewController.swift; sourceTree = "<group>"; };
+		05C3948E2B0C08BE00156E9F /* PrinterBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterBox.swift; sourceTree = "<group>"; };
+		05C394902B0C0B5800156E9F /* PrintersCVProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintersCVProxy.swift; sourceTree = "<group>"; };
+		05C394922B0C0EA500156E9F /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
+		05C394952B0C0F8000156E9F /* CustomPrinterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPrinterView.swift; sourceTree = "<group>"; };
+		05C394972B0C0FD300156E9F /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		05C3949A2B0C116A00156E9F /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
+		05C3949C2B0C11C200156E9F /* SettingsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataStore.swift; sourceTree = "<group>"; };
+		05C3949F2B0C120B00156E9F /* DiskIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskIO.swift; sourceTree = "<group>"; };
+		05C394A22B0C129400156E9F /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
+		05C394A42B0C12C600156E9F /* SettingsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextField.swift; sourceTree = "<group>"; };
+		05C394A62B0C12F700156E9F /* ColorDataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDataPicker.swift; sourceTree = "<group>"; };
+		05C394A82B0C135200156E9F /* RemovePrinterAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovePrinterAlertModifier.swift; sourceTree = "<group>"; };
+		05C394AC2B0C147900156E9F /* PrinterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterItem.swift; sourceTree = "<group>"; };
+		05C394AE2B0C14C500156E9F /* NavLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLogoView.swift; sourceTree = "<group>"; };
+		05C394B02B0C15F100156E9F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,14 +162,16 @@
 				054E96A42AE0BF2100F8987C /* PrusaLinkApp.swift */,
 				05C02DB72AA7D4DE008852EA /* AppDelegate.swift */,
 				05C02DB92AA7D4DE008852EA /* SceneDelegate.swift */,
-				05C02DBB2AA7D4DE008852EA /* PrusaWebViewController.swift */,
-				054E96A62AE0D52000F8987C /* PrusaWebSwiftUIView.swift */,
-				054E96A22ADDD9C500F8987C /* PrintersSwiftUIView.swift */,
-				0540DB2D2AB9363000B61BC9 /* SettingsSwiftUIView.swift */,
-				05C394852AF45B6C00156E9F /* PrinterImageViews.swift */,
-				05C394892AF6B45B00156E9F /* PrintersCollectionView.swift */,
-				0540DB2F2ABB48E700B61BC9 /* Settings.swift */,
+				05C394972B0C0FD300156E9F /* InfoView.swift */,
+				05C394AB2B0C141A00156E9F /* PrintersView */,
+				05C394AA2B0C13DC00156E9F /* PrusaWebView */,
+				05C394A12B0C126000156E9F /* SettingsView */,
+				05C394942B0C0F6500156E9F /* PrinterImageViews */,
+				05C3948B2B0C059000156E9F /* PrintersCollectionView */,
+				05C394992B0C114E00156E9F /* Models */,
+				05C3949E2B0C11F200156E9F /* Utils */,
 				0540DB312ABBF58E00B61BC9 /* Extenions.swift */,
+				05C394922B0C0EA500156E9F /* SwiftUIExtensions.swift */,
 				05C02DED2AA90F49008852EA /* KeychainSwiftDistrib.swift */,
 				05C02DBD2AA7D4DE008852EA /* Main.storyboard */,
 				05C02DC02AA7D4E0008852EA /* Assets.xcassets */,
@@ -163,6 +197,76 @@
 				05C02DDA2AA7D4E1008852EA /* PrusaLinkUITestsLaunchTests.swift */,
 			);
 			path = PrusaLinkUITests;
+			sourceTree = "<group>";
+		};
+		05C3948B2B0C059000156E9F /* PrintersCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				05C394892AF6B45B00156E9F /* PrintersCollectionView.swift */,
+				05C3948C2B0C05EA00156E9F /* PrintersCollectionViewController.swift */,
+				05C3948E2B0C08BE00156E9F /* PrinterBox.swift */,
+				05C394902B0C0B5800156E9F /* PrintersCVProxy.swift */,
+			);
+			path = PrintersCollectionView;
+			sourceTree = "<group>";
+		};
+		05C394942B0C0F6500156E9F /* PrinterImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				05C394852AF45B6C00156E9F /* GenericPrinterView.swift */,
+				05C394952B0C0F8000156E9F /* CustomPrinterView.swift */,
+			);
+			path = PrinterImageViews;
+			sourceTree = "<group>";
+		};
+		05C394992B0C114E00156E9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05C3949A2B0C116A00156E9F /* Printer.swift */,
+				0540DB2F2ABB48E700B61BC9 /* Settings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05C3949E2B0C11F200156E9F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				05C3949C2B0C11C200156E9F /* SettingsDataStore.swift */,
+				05C3949F2B0C120B00156E9F /* DiskIO.swift */,
+				05C394B02B0C15F100156E9F /* Environment.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		05C394A12B0C126000156E9F /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				0540DB2D2AB9363000B61BC9 /* SettingsView.swift */,
+				05C394A42B0C12C600156E9F /* SettingsTextField.swift */,
+				05C394A22B0C129400156E9F /* SecureTextField.swift */,
+				05C394A62B0C12F700156E9F /* ColorDataPicker.swift */,
+				05C394A82B0C135200156E9F /* RemovePrinterAlertModifier.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		05C394AA2B0C13DC00156E9F /* PrusaWebView */ = {
+			isa = PBXGroup;
+			children = (
+				054E96A62AE0D52000F8987C /* PrusaWebView.swift */,
+				05C02DBB2AA7D4DE008852EA /* PrusaWebViewController.swift */,
+				05C394AE2B0C14C500156E9F /* NavLogoView.swift */,
+			);
+			path = PrusaWebView;
+			sourceTree = "<group>";
+		};
+		05C394AB2B0C141A00156E9F /* PrintersView */ = {
+			isa = PBXGroup;
+			children = (
+				054E96A22ADDD9C500F8987C /* PrintersView.swift */,
+				05C394AC2B0C147900156E9F /* PrinterItem.swift */,
+			);
+			path = PrintersView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,17 +403,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C394912B0C0B5800156E9F /* PrintersCVProxy.swift in Sources */,
 				05C02DEE2AA90F49008852EA /* KeychainSwiftDistrib.swift in Sources */,
+				05C3949B2B0C116A00156E9F /* Printer.swift in Sources */,
 				05C3948A2AF6B45B00156E9F /* PrintersCollectionView.swift in Sources */,
-				05C394862AF45B6C00156E9F /* PrinterImageViews.swift in Sources */,
-				054E96A32ADDD9C500F8987C /* PrintersSwiftUIView.swift in Sources */,
+				05C394862AF45B6C00156E9F /* GenericPrinterView.swift in Sources */,
+				05C394AD2B0C147900156E9F /* PrinterItem.swift in Sources */,
+				05C394982B0C0FD300156E9F /* InfoView.swift in Sources */,
+				05C394962B0C0F8000156E9F /* CustomPrinterView.swift in Sources */,
+				054E96A32ADDD9C500F8987C /* PrintersView.swift in Sources */,
 				05C02DBC2AA7D4DE008852EA /* PrusaWebViewController.swift in Sources */,
-				0540DB2E2AB9363000B61BC9 /* SettingsSwiftUIView.swift in Sources */,
+				05C394A02B0C120B00156E9F /* DiskIO.swift in Sources */,
+				0540DB2E2AB9363000B61BC9 /* SettingsView.swift in Sources */,
+				05C3949D2B0C11C200156E9F /* SettingsDataStore.swift in Sources */,
+				05C3948F2B0C08BE00156E9F /* PrinterBox.swift in Sources */,
+				05C394A52B0C12C600156E9F /* SettingsTextField.swift in Sources */,
 				0540DB302ABB48E800B61BC9 /* Settings.swift in Sources */,
+				05C394A72B0C12F700156E9F /* ColorDataPicker.swift in Sources */,
+				05C394B12B0C15F100156E9F /* Environment.swift in Sources */,
+				05C394A32B0C129400156E9F /* SecureTextField.swift in Sources */,
+				05C3948D2B0C05EA00156E9F /* PrintersCollectionViewController.swift in Sources */,
 				054E96A52AE0BF2100F8987C /* PrusaLinkApp.swift in Sources */,
 				0540DB322ABBF58E00B61BC9 /* Extenions.swift in Sources */,
-				054E96A72AE0D52000F8987C /* PrusaWebSwiftUIView.swift in Sources */,
+				05C394AF2B0C14C500156E9F /* NavLogoView.swift in Sources */,
+				054E96A72AE0D52000F8987C /* PrusaWebView.swift in Sources */,
+				05C394932B0C0EA500156E9F /* SwiftUIExtensions.swift in Sources */,
 				05C02DB82AA7D4DE008852EA /* AppDelegate.swift in Sources */,
+				05C394A92B0C135200156E9F /* RemovePrinterAlertModifier.swift in Sources */,
 				05C02DBA2AA7D4DE008852EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

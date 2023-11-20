@@ -1,84 +1,12 @@
 //
-//  Settings.swift
+//  SettingsDataStore.swift
 //  PrusaLink
 //
-//  Created by George Waters on 9/20/23.
+//  Created by George Waters on 11/02/23.
 //
 
 import Foundation
 import Combine
-
-struct Printer: Identifiable, Codable {
-    let id: UUID
-    var name: String
-    var imageType: ImageType
-    var genericImageColor: ColorData?
-    var customImageData: Data?
-    var ipAddress: String?
-    var username: String?
-    var password: String?
-        
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case imageType
-        case genericImageColor
-        case customImageData
-        case ipAddress
-        case username
-    }
-    
-    enum ImageType: Codable {
-        case generic
-        case custom
-    }
-    
-    struct ColorData: Codable, Equatable {
-        let h: Double
-        let s: Double
-        let b: Double
-        
-        static let defaultColor = ColorData(h: (16.0/360.0), s: 0.8, b: 0.98)
-    }
-}
-
-extension Printer: Hashable {
-    static func == (lhs: Printer, rhs: Printer) -> Bool {
-        (
-            lhs.id == rhs.id &&
-            lhs.name == rhs.name &&
-            lhs.imageType == rhs.imageType &&
-            lhs.genericImageColor == rhs.genericImageColor &&
-            lhs.customImageData == rhs.customImageData &&
-            lhs.ipAddress == rhs.ipAddress &&
-            lhs.username == rhs.username &&
-            lhs.password == rhs.password
-        )
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-extension Printer {
-    init() {
-        id = UUID()
-        name = "Printer"
-        imageType = .generic
-    }
-}
-
-class Settings: ObservableObject {
-    @Published var printers: [Printer]
-    
-    @Published var selectedPrinterID: UUID?
-    
-    init (printers: [Printer] = [], selectedPrinterID: UUID? = nil) {
-        self.printers = printers
-        self.selectedPrinterID = selectedPrinterID
-    }
-}
 
 class SettingsDataStore {
     private var storedPrinters: [Printer] = []
@@ -240,76 +168,6 @@ private extension SettingsDataStore {
             let printer = Printer(id: UUID(), name: "Printer", imageType: .generic, ipAddress: ipAddress, username: username, password: password)
             storePrinterIDs([printer.id])
             storePrinter(printer)
-        }
-    }
-}
-
-struct DiskIO {
-    let appSupportDir: URL
-    let storageDir: URL
-    
-    let encoder = JSONEncoder()
-    let decoder = JSONDecoder()
-    
-    init(storageDir: String) {
-        appSupportDir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        self.storageDir = appSupportDir.appendingPathComponent(storageDir, conformingTo: .directory)
-        createDirIfMissing(self.storageDir)
-        
-    }
-    
-    private func createDirIfMissing(_ url: URL) {
-        do {
-            try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
-        } catch {
-            print("Error creating Application Support Directory: \n\(error)")
-        }
-    }
-    
-    func urlForKey(_ name: String) -> URL {
-        storageDir.appendingPathComponent(name, conformingTo: .json)
-    }
-    
-    func load<T>(_ type: T.Type, forKey name: String) -> T? where T: Decodable {
-        do {
-            let data = try Data(contentsOf: urlForKey(name))
-            let value = try decoder.decode(type, from: data)
-            return value
-        } catch {
-            print("Error loading key '\(name)'")
-            print(error)
-            return nil
-        }
-    }
-    
-    func load<T>(_ type: Optional<T>.Type, forKey name: String) -> T? where T: Decodable {
-        do {
-            let data = try Data(contentsOf: urlForKey(name))
-            let value = try decoder.decode(type, from: data)
-            return value
-        } catch {
-            print("Error loading Optional key '\(name)'")
-            print(error)
-            return nil
-        }
-    }
-    
-    func store<T>(_ value: T, forKey name: String) where T: Encodable {
-        do {
-            let data = try encoder.encode(value)
-            try data.write(to: urlForKey(name), options: .atomic)
-        } catch {
-            print("Error storing key '\(name)'")
-            print(error)
-        }
-    }
-    
-    func removeKey(_ name: String) {
-        do {
-            try FileManager.default.removeItem(at: urlForKey(name))
-        } catch {
-            print("Error removing key '\(name)'")
-            print(error)
         }
     }
 }

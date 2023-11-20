@@ -5,8 +5,7 @@
 //  Created by George Waters on 9/20/23.
 //
 
-import Foundation
-import SwiftUI
+import UIKit
 
 extension Bundle {
     func loadResource(_ name: String?, withExension ext: String?) -> String? {
@@ -34,42 +33,6 @@ extension Bundle {
     
     func getCompileYear() -> String {
         String(Calendar(identifier: .gregorian).dateComponents([.year], from: getCompileDate()).year!)
-    }
-}
-
-extension Color {
-    init(colorData: Printer.ColorData) {
-        self.init(hue: colorData.h, saturation: colorData.s, brightness: colorData.b)
-    }
-    
-    var colorData: Printer.ColorData {
-        let uiColor = UIColor(self)
-        var h: CGFloat = 0
-        var s: CGFloat = 0
-        var b: CGFloat = 0
-        var a: CGFloat = 0
-        
-        guard uiColor.getHue(&h, saturation: &s, brightness: &b, alpha: &a) else {
-            return .defaultColor
-        }
-        
-        return Printer.ColorData(h: h, s: s, b: b)
-    }
-}
-
-extension Image {
-    init?(data: Data) {
-        guard let uiImage = UIImage(data: data) else {
-            return nil
-        }
-        
-        self.init(uiImage: uiImage)
-    }
-}
-
-extension NavigationLink where Destination == Never {
-    init(view: NavigationView, @ViewBuilder label: () -> Label) {
-        self.init(value: view, label: label)
     }
 }
 

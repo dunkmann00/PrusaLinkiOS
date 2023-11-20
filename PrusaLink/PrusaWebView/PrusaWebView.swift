@@ -1,5 +1,5 @@
 //
-//  PrusaWebSwiftUIView.swift
+//  PrusaWebView.swift
 //  PrusaLink
 //
 //  Created by George Waters on 10/18/23.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct PrusaWebSwiftUIView: View {
+struct PrusaWebView: View {
     var printer: Printer
     @Binding var logoViewOffset: CGFloat
     
     var body: some View {
-        _PrusaWebSwiftUIView(printer: printer, logoViewOffset: $logoViewOffset)
+        _PrusaWebView(printer: printer, logoViewOffset: $logoViewOffset)
             .ignoresSafeArea()
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -28,7 +28,7 @@ struct PrusaWebSwiftUIView: View {
     }
 }
 
-struct _PrusaWebSwiftUIView: UIViewControllerRepresentable {
+struct _PrusaWebView: UIViewControllerRepresentable {
     typealias UIViewControllerType = PrusaWebViewController
     
     var printer: Printer
@@ -50,8 +50,8 @@ struct _PrusaWebSwiftUIView: UIViewControllerRepresentable {
 
 
 
-struct PrusaWebSwiftUIView_Previews: PreviewProvider {
+struct PrusaWebView_Previews: PreviewProvider {
     static var previews: some View {
-        PrusaWebSwiftUIView(printer: Printer(), logoViewOffset: .constant(50))
+        PrusaWebView(printer: Printer(), logoViewOffset: .constant(50))
     }
 }

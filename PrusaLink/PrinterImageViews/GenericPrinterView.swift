@@ -1,5 +1,5 @@
 //
-//  PrinterImageViews.swift
+//  GenericPrinterView.swift
 //  PrusaLink
 //
 //  Created by George Waters on 11/2/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GenericPrinterImage: View {
+struct GenericPrinterView: View {
     let colorData: Printer.ColorData
     
     var color: Color {
@@ -50,35 +50,5 @@ struct GenericPrinterImage: View {
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(color)
         }
-    }
-}
-
-struct CustomPrinterImage: View {
-    let imageData: Data?
-    
-    var body: some View {
-        if let imageData = imageData,
-           let image = Image(data: imageData) {
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        } else {
-            Color(uiColor: .systemGray3)
-                .aspectRatio(1, contentMode: .fit)
-                .overlay {
-                    Image(systemName: "questionmark")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(Color(uiColor: .systemGray6))
-                        .padding(15)
-                }
-        }
-    }
-}
-
-struct PrinterImage_Previews: PreviewProvider {
-    static var previews: some View {
-        GenericPrinterImage(colorData: .defaultColor)
-        CustomPrinterImage(imageData: nil)
     }
 }

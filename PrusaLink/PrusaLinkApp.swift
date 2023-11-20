@@ -26,7 +26,7 @@ struct PrusaLinkApp: App {
     
     var body: some Scene {
         WindowGroup {
-            PrintersSwiftUIView()
+            PrintersView()
                 .environmentObject(settings)
                 .navigationViews($navigationViews)
         }

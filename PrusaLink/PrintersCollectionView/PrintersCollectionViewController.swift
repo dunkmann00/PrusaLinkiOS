@@ -1,5 +1,5 @@
 //
-//  PrintersCollectionView.swift
+//  PrintersCollectionViewController.swift
 //  PrusaLink
 //
 //  Created by George Waters on 11/4/23.
@@ -61,11 +61,13 @@ class PrintersCollectionViewController<Content: View>: UICollectionViewControlle
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        // Needed for rotations, the correct size info is not in viewWillTransition
         updateCollectionViewItemSize()
     }
 
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
+        // Needed for rotations, the correct size info is not in viewWillTransition
         updateCollectionViewItemSize()
     }
     
@@ -85,6 +87,9 @@ class PrintersCollectionViewController<Content: View>: UICollectionViewControlle
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate { [self] context in
+            // On the iPad the rotation animation looks great, but on iPhone, -_- , not so much.
+            // I tested this with iOS 16, so I'm curious if this will be fixed in the newer OS.
+            // But for now, we just hide the rotation animation on the iPhone.
             if UIDevice.current.userInterfaceIdiom == .phone {
                 collectionView.alpha = 0
             }
@@ -206,96 +211,6 @@ extension PrintersCollectionViewController: PrinterBoxDelegate {
     }
 }
 
-struct PrintersCollectionView<Content: View>: View {
-    @Binding var printers: [Printer]
-    @ViewBuilder let content: (Binding<Printer>) -> Content
-        
-    @Environment(\.printersCVProxy) var printersCVProxy: PrintersCVProxy
-    
-    var body: some View {
-        _PrintersCollectionView($printers, content: content)
-            .ignoresSafeArea()
-            .navigationTitle("Printers")
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        let newPrinter = Printer()
-                        printers.append(newPrinter)
-                        Task {
-                            try await Task.sleep(for: .seconds(0.1))
-                            printersCVProxy.scrollTo(newPrinter)
-                        }
-                    } label: {
-                        Image(systemName: "plus.circle")
-                    }
-                }
-                ToolbarItemGroup(placement: .bottomBar) {
-                    Spacer()
-                    NavigationLink(view: .infoView) {
-                        Image(systemName: "info.circle")
-                    }
-                }
-            }
-    }
-    
-    init(_ printers: Binding<[Printer]>, @ViewBuilder content: @escaping (Binding<Printer>) -> Content) {
-        self._printers = printers
-        self.content = content
-    }
-}
-
-struct _PrintersCollectionView<Content: View>: UIViewControllerRepresentable {
-    class Coordinator {
-        var parent: _PrintersCollectionView
-        
-        init(_ parent: _PrintersCollectionView) {
-            self.parent = parent
-        }
-    }
-    
-    private class Status {
-        var needsUpdate = true
-    }
-        
-    @Binding var printers: [Printer]
-    @ViewBuilder let content: (Binding<Printer>) -> Content
-    
-    @Environment(\.printersCVProxy) var printersCVProxy: PrintersCVProxy
-    
-    private let status = Status()
-    
-    init(_ printers: Binding<[Printer]>, @ViewBuilder content: @escaping (Binding<Printer>) -> Content) {
-        self._printers = printers
-        self.content = content
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-    
-    func makeUIViewController(context: Context) -> PrintersCollectionViewController<Content> {
-        let printersCollectionVC = PrintersCollectionViewController(printers, coordinator: context.coordinator, content: content)
-        printersCVProxy.registerPrintersCollectionVC(printersCollectionVC)
-        return printersCollectionVC
-    }
-    
-    func updateUIViewController(_ uiViewController: PrintersCollectionViewController<Content>, context: Context) {
-        Task {
-            if status.needsUpdate {
-                context.coordinator.parent = self
-                printersCVProxy.registerPrintersCollectionVC(uiViewController)
-                uiViewController.updatePrinterBoxesWithPrinters(printers)
-                uiViewController.updatePrinterBoxesWithContent(content)
-                status.needsUpdate = false
-            }
-        }
-    }
-    
-    static func dismantleUIViewController(_ uiViewController: PrintersCollectionViewController<Content>, coordinator: Coordinator) {
-        coordinator.parent.printersCVProxy.unregisterPrintersCollectionVC(uiViewController)
-    }
-}
-
 struct PrintersCollectionViewCell<Content: View>: View {
     @ObservedObject var printerBox: PrinterBox<Content>
     
@@ -303,91 +218,3 @@ struct PrintersCollectionViewCell<Content: View>: View {
         printerBox.content($printerBox.printer)
     }
 }
-
-protocol PrinterBoxDelegate: AnyObject {
-    func printerDidChangeInBox<Content: View>(_ printerBox: PrinterBox<Content>)
-}
-
-class PrinterBox<Content: View>: ObservableObject {
-    let id: UUID = UUID()
-    @Published var printer: Printer {
-        didSet {
-            delegate?.printerDidChangeInBox(self)
-        }
-    }
-    @Published var content: (Binding<Printer>) -> Content
-    
-    weak var delegate: PrinterBoxDelegate?
-    
-    init(_ printer: Printer, @ViewBuilder content: @escaping (Binding<Printer>) -> Content) {
-        self.printer = printer
-        self.content = content
-    }
-}
-
-class PrintersCVProxy {
-    private struct Registration: Hashable {
-        let id: Int
-        let handler: (Printer) -> Bool
-        
-        static func == (lhs: PrintersCVProxy.Registration, rhs: PrintersCVProxy.Registration) -> Bool {
-            lhs.id == rhs.id
-        }
-        
-        func hash(into hasher: inout Hasher) {
-            hasher.combine(id)
-        }
-    }
-    
-    private var registrations: Set<Registration> = []
-    
-    func registerPrintersCollectionVC<Content: View>(_ printersCollectionVC: PrintersCollectionViewController<Content>) {
-        let registration = Registration(id: printersCollectionVC.hashValue) { printer in
-            printersCollectionVC.scrollToPrinter(printer)
-        }
-        registrations.insert(registration)
-    }
-    
-    func unregisterPrintersCollectionVC<Content: View>(_ printersCollectionVC: PrintersCollectionViewController<Content>) {
-        let registration = Registration(id: printersCollectionVC.hashValue, handler: {_ in false})
-        registrations.remove(registration)
-    }
-    
-    func scrollTo(_ printer: Printer) {
-        for registration in registrations {
-            if registration.handler(printer) {
-                break
-            }
-        }
-    }
-}
-
-private struct PrintersCVProxyKey: EnvironmentKey {
-    static let defaultValue = PrintersCVProxy()
-}
-
-extension EnvironmentValues {
-    var printersCVProxy: PrintersCVProxy {
-        get { self[PrintersCVProxyKey.self] }
-        set { self[PrintersCVProxyKey.self] = newValue }
-    }
-}
-
-extension View {
-    func printersCVReader(_ printersCVProxy: PrintersCVProxy) -> some View {
-        environment(\.printersCVProxy, printersCVProxy)
-    }
-}
-
-
-extension PrinterBox: Hashable {
-    static func == (lhs: PrinterBox, rhs: PrinterBox) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-
