@@ -40,10 +40,11 @@ struct SettingsView: View {
                                 printer.ipAddress = (printer.ipAddress ?? "") + "."
                             } label: {
                                 Text(".")
-                                    .padding(.horizontal, 8)
+                                    .padding(.horizontal, 15)
                             }
                             .buttonStyle(.borderedProminent)
                             .tint(.init(uiColor: .systemGray2))
+
                             
                             Spacer()
                             
