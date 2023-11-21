@@ -44,6 +44,7 @@
 		05C394AD2B0C147900156E9F /* PrinterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394AC2B0C147900156E9F /* PrinterItem.swift */; };
 		05C394AF2B0C14C500156E9F /* NavLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394AE2B0C14C500156E9F /* NavLogoView.swift */; };
 		05C394B12B0C15F100156E9F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394B02B0C15F100156E9F /* Environment.swift */; };
+		05C394B52B0C756900156E9F /* TestPrinters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C394B42B0C756900156E9F /* TestPrinters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		05C394AC2B0C147900156E9F /* PrinterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterItem.swift; sourceTree = "<group>"; };
 		05C394AE2B0C14C500156E9F /* NavLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLogoView.swift; sourceTree = "<group>"; };
 		05C394B02B0C15F100156E9F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		05C394B42B0C756900156E9F /* TestPrinters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPrinters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				05C3949C2B0C11C200156E9F /* SettingsDataStore.swift */,
 				05C3949F2B0C120B00156E9F /* DiskIO.swift */,
 				05C394B02B0C15F100156E9F /* Environment.swift */,
+				05C394B42B0C756900156E9F /* TestPrinters.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				05C02DBC2AA7D4DE008852EA /* PrusaWebViewController.swift in Sources */,
 				05C394A02B0C120B00156E9F /* DiskIO.swift in Sources */,
 				0540DB2E2AB9363000B61BC9 /* SettingsView.swift in Sources */,
+				05C394B52B0C756900156E9F /* TestPrinters.swift in Sources */,
 				05C3949D2B0C11C200156E9F /* SettingsDataStore.swift in Sources */,
 				05C3948F2B0C08BE00156E9F /* PrinterBox.swift in Sources */,
 				05C394A52B0C12C600156E9F /* SettingsTextField.swift in Sources */,
