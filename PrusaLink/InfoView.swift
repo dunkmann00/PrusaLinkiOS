@@ -28,7 +28,7 @@ struct InfoView: View {
                         .bold()
                     HStack(alignment: .firstTextBaseline) {
                         Text("1.")
-                        Text("Load the PrusaLink web app from your printer at the provided IP Address.")
+                        Text("Load the PrusaLink web app from your printer at the provided IP Address. (Multiple printers are supported.)")
                     }
                     HStack(alignment: .firstTextBaseline) {
                         Text("2.")
@@ -39,7 +39,7 @@ struct InfoView: View {
                     Text("Why is that useful?")
                         .font(.system(.title3))
                         .bold()
-                    Text("As of the release date of version \(Bundle.main.getAppVersion()) of this app, due to an unknown issue, you can't view PrusaLink with Safari on iOS. It will keep asking for the credentials but never load the webpage.")
+                    Text("As of the release date of version \(Bundle.main.getAppVersion()) of this app, due to an issue, you can't view PrusaLink with Safari on iOS. It will keep asking for the credentials but never load the webpage.")
                     Text("It is also kind of nice to have a dedicated app for viewing your printer's status...well I think it is anyway. 😁")
                 }
                 Text("If you have any issues or questions, please visit the link above.")

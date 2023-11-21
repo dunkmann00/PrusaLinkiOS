@@ -19,7 +19,8 @@ struct PrusaLinkApp: App {
         self.settingsDataStore = settingsDataStore
         let settings = settingsDataStore.loadSettings()
         _settings = StateObject(wrappedValue: settings)
-        if let selectedPrinterID = settings.selectedPrinterID {
+        if let selectedPrinterID = settings.selectedPrinterID,
+           settings.printers.contains(where: { $0.id == selectedPrinterID }) {
             _navigationViews = State(wrappedValue: [.webView(selectedPrinterID)])
         }
     }
