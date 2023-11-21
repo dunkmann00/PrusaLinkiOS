@@ -32,11 +32,22 @@ struct SettingsView: View {
             Section("IP Address") {
                 SettingsTextField("IP Address", text: Binding($printer.ipAddress, replacingNilWith: ""))
                 .focused($ipAddressIsFocused)
-                .keyboardType(.decimalPad)
+                .keyboardType(.numberPad)
                 .toolbar {
                     if ipAddressIsFocused {
                         ToolbarItemGroup(placement: .keyboard) {
+                            Button {
+                                printer.ipAddress = (printer.ipAddress ?? "") + "."
+                            } label: {
+                                Text(".")
+                                    .padding(.horizontal, 15)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(.init(uiColor: .systemGray2))
+
+                            
                             Spacer()
+                            
                             Button("done") {
                                 ipAddressIsFocused = false
                             }
